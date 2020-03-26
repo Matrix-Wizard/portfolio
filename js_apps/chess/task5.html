@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Task 5</title>
+<style>
+html {
+  background: #cfcfcf;
+}
+table {
+  border-collapse: collapse;
+  background: rgb(148, 148, 148);
+}
+td {
+  width: 30px;
+  height: 30px;
+  border: 2px solid black;
+}
+tr:nth-child(2n-1) td:nth-child(2n-1) {
+  width: 30px;
+  height: 30px;
+  background: white;
+}
+tr:nth-child(2n) td:nth-child(2n) {
+  width: 30px;
+  height: 30px;
+  background: white;
+}
+.numbers tr:nth-child(n) > td {
+  background: #cfcfcf;
+  border: 2px dotted #cfcfcf;
+  text-align: center;
+}
+.numbers table {
+  border-style: hidden;
+}
+
+.letters table {
+  border-style: hidden;
+}
+.letters tr td:nth-child(n) {
+  background: #cfcfcf;
+  border: 2px dotted #cfcfcf;
+  text-align: center;
+}
+.letters tr td:first-child {
+  font-size:0;
+}
+
+</style>
+</head>
+
+<!-- body -->
+<body>
+<div id="chess" style="display: flex;">
+  <!-- Этот блок заполняется с помощью js -->
+</div>
+<div id="letters" style="display: flex;">
+  <!-- Этот блок заполняется с помощью js -->
+</div>
+
+
+
+
+
+<!-- javascript -->
+<script>
+let chess = document.querySelector('#chess')
+let lettersChess = document.querySelector('#letters')
+
+// Генерируем шахматную доску
+let boardCells = ''
+for (let row = 0; row < 8; row++) {
+  boardCells += '<tr>'
+  for (let cell = 0; cell < 8; cell++) {
+    boardCells += '<td></td>'
+  }
+  boardCells += '</tr>'
+}
+let board = `<div><table>${boardCells}</table></div>`
+chess.insertAdjacentHTML('afterBegin', board)
+
+
+// Проставляем цифры 
+let tdNumbers = ''
+for (let cell = 1; cell < 9; cell++) {
+  tdNumbers += `<tr><td>${cell}</td></tr>`
+}
+let numbers = `<div class = "numbers"><table>${tdNumbers}</table></div>`
+chess.insertAdjacentHTML('afterBegin', numbers)
+
+
+// Проставляем буквы 
+let bukva = '0ABCDEFGH'
+let tdLetters = ''
+for (let cell = 0; cell < bukva.length; cell++) {
+  tdLetters += `<td>${bukva[cell]}</td>`
+}
+let Letters = `<div class = "letters"><table><tr>${tdLetters}</tr></table></div>`
+lettersChess.insertAdjacentHTML('afterBegin', Letters)
+
+</script>
+</body>
+</html>

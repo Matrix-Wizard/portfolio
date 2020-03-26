@@ -1,0 +1,79 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+body {
+  margin: 0;
+  height: 100%;
+}
+.container {
+  margin: 0 auto;
+  max-width: 900px;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 96%;
+}
+
+/* Оформление корзины */
+.menu {
+  background-color: #66FFCC;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.basket-wrap {
+  position: relative;
+}
+.menu_basket {
+  position: absolute;
+  top: 22px;
+  right: 0;
+  background-color: #fff;
+  visibility: hidden;
+}
+
+/* Оформление основы */
+.products {
+  display: flex;
+  padding: 20px 0;
+  flex-wrap: wrap;
+  /* background-color: aliceblue; */
+}
+.products_item {
+  margin-right: 30px;
+  margin-bottom: 30px;
+}
+.footer {
+  background-color: #33CC99;
+  padding: 20px;
+  margin-top: auto;
+}
+
+/* Оформление таблицы */
+table {
+  border: 1px solid #CCCCCC;
+  border-collapse: collapse;
+  font-size: small;
+}
+th, td {
+  padding: 8px;
+}
+th {
+  border-bottom: 1px solid #CCCCCC;
+  border-top: 1px solid #CCCCCC;
+  text-align: initial;
+}
+table tbody tr:nth-child(2n) {
+  background-color: #CCCCCC;
+}
+table tbody tr td:nth-child(2) {
+  min-width: 60px;
+}
+table i:hover {
+  color: cadetblue;
+  cursor: pointer;
+}

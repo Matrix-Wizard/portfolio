@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Task 4</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .product {
+      margin-right: 25px;
+    }
+
+    .product button {
+      display: block;
+    }
+
+    .desc {
+      display: none;
+      border: 1px solid black;
+      height: 100%;
+      padding: 5px;
+    }
+
+    .wrap {
+      margin-top: 10px;
+      max-width: 200px;
+      height: 200px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<!-- HTML -->
+
+<body>
+  <div class="container">
+
+    <div class="product">
+      <div class="productName">Product 1 name</div>
+      <div class="wrap">
+        <div class="desc">
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius ipsam, aperiam harum facilis earum expedita.
+          Sunt iste veritatis totam perferendis.
+        </div>
+        <img src="https://dummyimage.com/200x200/d6d4ff/262626" alt="Картинка">
+      </div>
+      <button>Подробнее</button>
+    </div>
+
+    <div class="product">
+      <div class="productName">Product 2 name</div>
+      <div class="wrap">
+        <div class="desc">
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius ipsam, aperiam harum facilis earum expedita.
+          Sunt iste veritatis totam perferendis.
+        </div>
+        <img src="https://dummyimage.com/200x200/d6d4ff/262626" alt="Картинка">
+      </div>
+      <button>Подробнее</button>
+    </div>
+
+    <div class="product">
+      <div class="productName">Product 3 name</div>
+      <div class="wrap">
+        <div class="desc">
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius ipsam, aperiam harum facilis earum expedita.
+          Sunt iste veritatis totam perferendis.
+        </div>
+        <img src="https://dummyimage.com/200x200/d6d4ff/262626" alt="Картинка">
+      </div>
+      <button>Подробнее</button>
+    </div>
+
+  </div>
+
+
+
+
+  <!-- JavaScript -->
+  <script>
+    'use strict'
+    // let btn = document.querySelectorAll('button');
+    // let img = document.querySelectorAll('img');
+    // let desc = document.querySelectorAll('.desc');
+    let product = document.querySelectorAll('.product');
+
+    product.forEach(function (element) {
+      let btn = element.querySelector('button');
+      let img = element.querySelector('img');
+      let desc = element.querySelector('.desc');
+      btn.addEventListener('click', function () {
+
+        if (btn.innerText == 'Подробнее') {
+          img.style.display = 'none'
+          desc.style.display = 'block'
+          btn.innerText = 'Отмена'
+        } else {
+          img.style.display = 'block'
+          desc.style.display = 'none'
+          btn.innerText = 'Подробнее'
+        }
+
+      })
+
+
+
+      // console.log(element.querySelector('button'));
+    })
+
+    // btn.forEach(function(element) {
+    //   element.addEventListener('click', function(event) {
+    //     // img.style.display = 'none'
+    //     // desc.style.display = 'block'
+    //     element.innerText = 'Отмена'
+    //     console.log();
+    //   })
+    // })
+
+
+    // Для всех элементов
+    // let sum = 0
+    // for (let element in btn) {
+
+    //   btn[element].addEventListener('click', function() {
+    //     if (btn[element].innerText == 'Подробнее') {
+    //       img[element].style.display = 'none'
+    //       desc[element].style.display = 'block'
+    //       btn[element].innerText = 'Отмена'
+    //     } else {
+    //       img[element].style.display = 'block'
+    //       desc[element].style.display = 'none'
+    //       btn[element].innerText = 'Подробнее'
+    //     }
+    //   })
+
+    //   sum++
+    //   if (sum == btn.length) {
+    //     break
+    //   }
+    // }
+
+    // Для одного элемента
+    // btn.addEventListener('click', function () {
+    //   if (btn.innerText == 'Подробнее') {
+    // img.style.display = 'none'
+    // desc.style.display = 'block'
+    // btn.innerText = 'Отмена'
+    //   } else {
+    //     img.style.display = 'block'
+    //     desc.style.display = 'none'
+    //     btn.innerText = 'Подробнее'
+    //   }
+
+    // })
+  </script>
+</body>
+
+</html>

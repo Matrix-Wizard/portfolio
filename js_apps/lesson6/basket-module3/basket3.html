@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Модуль корзины</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+  <link rel="stylesheet" href="basket3.css">
+</head>
+
+<body>
+  <div class="container">
+    <!-- В этом блоке находится корзина -->
+    <div class="menu">
+      <div></div>
+      <div class="basket-wrap">
+        <button class="menu_button">Корзина</button>
+        <table class="menu_basket">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Имя</th>
+              <th>Цена</th>
+              <th>Количество</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tfoot>
+            <tr>
+              <th colspan="2">Итого:</th>
+              <th colspan="3"><span id="totalSum">0</span> рублей</th>
+            </tr>
+          </tfoot>
+          <tbody>
+
+          </tbody>
+
+        </table>
+      </div>
+    </div>
+
+    <!-- Товары загружаются из js файла -->
+    <div class="products">
+
+    </div>
+
+    <!-- Подвал -->
+    <footer class="footer"></footer>
+  </div>
+  <!-- .container end -->
+
+  <script src="products.js"></script>
+  <script src="renderProducts.js"></script>
+  <script src="basket3.js"></script>
+</body>
+
+</html>

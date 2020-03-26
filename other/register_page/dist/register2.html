@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="register_page.css">
+  <title>Страница записи</title>
+
+  <style>
+    summary {
+      outline-style: none;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    details {
+      margin-top: 10px;
+    }
+    /* details p {
+      background-color: #f2f2f2f3;
+      padding: 10px 15px;
+      margin: 0;
+    } */
+    details ul {
+      background-color: #f2f2f2f3;
+      padding: 10px 30px;
+      margin: 0;
+    }
+    details[open] p {
+      animation: spoiler 0.5s;
+    }
+    @keyframes spoiler {
+      0% {opacity: 0;}
+      100% {opacity: 1;}
+    }
+    li span {
+      display: inline-block;
+      min-width: 80px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="headline">Запись на экскурсию</h1>
+    <form action="#">
+      <input type="text" placeholder="Имя" maxlength="20">
+      <input type="text" placeholder="Телефон" maxlength="20">
+      <select>
+        <option>Кол-во человек</option>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+      <input style="margin-top: 10px;" type="button" value="Записаться">
+    </form>
+    <p id="messegeForm" style="color: #FF3300;"></p>
+    <hr>
+    <div>Записаны на экскурсию: <span id="quantity">0</span> чел.</div>
+    <details class="topic-inside">
+      <summary class="topic">Список записавшихся</summary>
+      <ul id="list">
+        <li>Смелее записывайся! =)</li>
+      </ul>
+    </details>
+    <hr>
+    <p>Телефон для справок: +7(921) 573-18-94</p>
+    <p>P.S. Если Ваша группа больше 5 человек, тогда следует заказать отдельную экскурсию, позвонив нам.</p>
+    <p style="color: rgb(180, 180, 180);">P.P.S.Если количество записавшихся будет больше 10 человек. Тогда возможность следующей записи блокируется.</p>
+  </div>
+
+  <script src="register.js"></script>
+</body>
+
+</html>

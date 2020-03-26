@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Slider</title>
+  <link rel="stylesheet" href="packages/slider/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+  <style>
+    .slider {
+      margin: 0 auto;
+    }
+    .slider-item {
+      /* animation-duration: 2s;
+      animation-delay: 0.1s; */
+      opacity: 1;
+      transition: 1s;
+    }
+    .hidden-slide {
+      opacity: 0;
+      transition: 1s;
+    }
+    .slider-rightArrow:hover, .slider-leftArrow:hover {
+      color: #d6d6d6;
+    }
+    .slider-rightArrow:active, .slider-leftArrow:active {
+      color: #bdbdbd;
+    }
+  </style>
+</head>
+
+<body>
+<!-- Мы храним всё в паке pakages, потому что будто бы мы это файл скачали // скачали слайдер. Чтобы разделять свой код и чужой -->
+  <div class="slider" data-width="720px" data-height="480px">
+    <div class="slider-item hidden-slide">
+      <img src="https://placeimg.com/1920/1080/animals" alt="">
+    </div>
+    <div class="slider-item hidden-slide">
+      <img src="https://placeimg.com/1920/1080/tech" alt="">
+    </div>
+    <div class="slider-item hidden-slide">
+      <img src="https://placeimg.com/1920/1080/nature" alt="">
+    </div>
+</div>
+<script src="packages/slider/app.js"></script>
+<!-- <script src="slider2.js"></script> -->
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Игра змейка</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      background: #CCCCFF;
+      text-align: center;
+    }
+
+    button {
+      width: 100px;
+      padding: 10px;
+      margin: 10px;
+      color: white;
+      background: #007b32;
+      border: none;
+      outline: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #009641;
+    }
+
+    button:active {
+      /* background: #9cfb02; */
+      background: #33CCCC;
+      color: black;
+    }
+
+    #game {
+      border-collapse: collapse;
+      margin: 20px auto;
+      /* min-height: 484px; */
+    }
+
+    td {
+    width: 20px;
+    height: 20px;
+    border: 1px solid black;
+    }
+
+    .food {
+    background: #00d021;
+    }
+
+    .snakeBody {
+    background: #e5e5e5;
+    }
+
+    #message {
+      color: orange;
+      font-size: 24px;
+    }
+  </style>
+</head>
+<body>
+<div>Съедено: <span id="currentSnakeLength">0</span> из <span id="winSnakeLength">10</span></div>
+<table id="game"></table>
+
+<button id="startBtn">Старт</button>
+<button id="pauseBtn">Пауза</button>
+
+<div id="message"></div>
+
+
+<script src="js/Settings.js"></script>
+<script src="js/Status.js"></script>
+<script src="js/Board.js"></script>
+<script src="js/Snake.js"></script>
+<script src="js/Food.js"></script>
+<script src="js/Menu.js"></script>
+<script src="js/Game.js"></script>
+
+
+<script src="js/main.js"></script>
+</body>
+</html>

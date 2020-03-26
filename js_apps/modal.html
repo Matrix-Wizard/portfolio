@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>lesson-5</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+  <style>
+    div {
+      padding: 20px;
+      border: 1px solid black;
+      display: none;
+      max-width: 200px;
+      margin: 0 auto;
+      margin-top: 10px;
+      background: yellowgreen;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <button>Открыть</button>
+  <div class="animated zoomIn">Модальное окно</div>
+
+
+  <script>
+    'use strict'
+    let btn = document.querySelector('button')
+    let modal = document.querySelector('div')
+    btn.addEventListener('click', function () {
+      modal.classList.remove('zoomOut')
+      modal.style.display = 'block'
+    })
+    window.addEventListener('click', function (event) {
+      if (event.target !== modal && event.target !== btn) {
+        modal.classList.add('zoomOut')
+      }
+    })
+  </script>
+
+</body>
+
+</html>
