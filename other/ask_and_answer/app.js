@@ -77,12 +77,15 @@ function foo(event) {
       questionPassed++
       finishPrase()
     } else {
-      event.target.style.backgroundColor = "#FF6666";
+      
       // main.classList.remove("qu_answers_extra")
 
       // let textAlert = main.parentElement.querySelector('.qu_alert_text')
       textAlert.innerText = 'Ответ не верен!'
-      currentScore--
+      if (event.target.style.backgroundColor != "rgb(255, 102, 102)") {
+        currentScore--
+      }
+      event.target.style.backgroundColor = "#FF6666";
       scoreSpan[2].innerText = currentScore
     }
   }
