@@ -45,7 +45,7 @@ generateQu.init()
 let modalSpan = document.querySelector('.modal > span')
 
 let questionQuantity = questions.length
-let questionLeft = questionQuantity
+let questionLeft = 0
 let currentScore = 0
 let questionPassed = 0
 let index = 1
@@ -72,7 +72,7 @@ function foo(event) {
   let main = event.srcElement.parentElement
   let textAlert = main.parentElement.querySelector('.qu_alert_text')
   if (textAlert.innerText === 'ответ') {
-    questionLeft--
+    questionLeft++
     scoreSpan[0].innerText = questionLeft
   }
 
