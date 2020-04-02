@@ -125,10 +125,14 @@ closeBtn.addEventListener('click', function () {
 
 
 // Добавляем проигрывание музыки
+// function soundClick() {
+//   let audio = new Audio();
+//   audio.src = 'victory.mp3';
+//   audio.autoplay = true;
+// }
 function soundClick() {
-  let audio = new Audio();
-  audio.src = 'victory.mp3';
-  audio.autoplay = true;
+  let audio = document.querySelector('audio');
+  audio.play()
 }
 
 // Доработать
