@@ -108,6 +108,7 @@ function finishPrase() {
     modalSpan.innerText = currentScore
     q.style.opacity = 1
     q.style.visibility = 'visible'
+    soundClick()
   }
 }
 
@@ -123,9 +124,17 @@ closeBtn.addEventListener('click', function () {
 })
 
 
+// Добавляем проигрывание музыки
+function soundClick() {
+  let audio = new Audio();
+  audio.src = 'victory.mp3';
+  audio.autoplay = true;
+}
+
 // Доработать
 // Баллы прибавлялись более корректно
 // Вопросы в разном порядке на странице (и ответы тоже)
-// Окошечко с баллами сделать справа
+
+
 
 
