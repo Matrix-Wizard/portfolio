@@ -1,37 +1,54 @@
-const container = document.querySelector('.container')
+"use strict";
 
-// Добавляем вопрос на страницу
-for (let i = 0; i < questions.length; i++) {
-  let qu = `
+// Добавляет вопросы на страницу
+let generateQu = {
+  container: document.querySelector('.container'),
+  
+  init() {
+    for (let i = 0; i < questions.length; i++) {
+      let qu = `
     <div class="qu">
       <h3 class="qu_num">Вопрос #<span>${i+1}</span></h3>
       <p class="qu_text">${questions[i].question}</p>
       <div class="qu_answers qu_answers_extra" data-id = ${i}>
-        ${createAnswer(i)}
+        ${this.createAnswer(i)}
       </div>
-      <p class="qu_alert_text"></p>
+      <p class="qu_alert_text">ответ</p>
     </div>
     <!-- qu end -->
   `
-  container.insertAdjacentHTML('beforeend', qu)
-}
-function createAnswer(i) {
-  let htmlCode = ''
-  
-  for (let elem in questions[i].answers) {
-    let an = `<div>${elem}: ${questions[i].answers[elem]}</div>`
-    htmlCode += an
-  }
+      this.container.insertAdjacentHTML('beforeend', qu)
+    }
+  },
 
-  return htmlCode
+  createAnswer(i) {
+    let htmlCode = ''
+
+    for (let elem in questions[i].answers) {
+      let an = `<div>${elem}: ${questions[i].answers[elem]}</div>`
+      htmlCode += an
+    }
+
+    return htmlCode
+  },
+
 }
+
+generateQu.init()
+
+
+
+
 
 
 // Счёт
+let modalSpan = document.querySelector('.modal > span')
+
 let questionQuantity = questions.length
 let questionLeft = questionQuantity
 let currentScore = 0
 let questionPassed = 0
+let index = 1
 
 let score = document.querySelector('.score')
 let scoreSpan = score.querySelectorAll('span')
@@ -51,11 +68,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
 }, false);
 
-
 function foo(event) {
   let main = event.srcElement.parentElement
   let textAlert = main.parentElement.querySelector('.qu_alert_text')
-  if (textAlert.innerText === '') {
+  if (textAlert.innerText === 'ответ') {
     questionLeft--
     scoreSpan[0].innerText = questionLeft
   }
@@ -64,47 +80,51 @@ function foo(event) {
     // Проверяем правильный или нет ответ
     let id = main.dataset.id
     if (event.target.innerText[0] === questions[id].rightAnswer) {
-      // console.log('Правильно');
       event.target.style.backgroundColor = "#33CC66";
       main.classList.remove("qu_answers_extra")
-      // console.dir(event.target);
-      // let textAlert = main.parentElement.querySelector('.qu_alert_text')
+
+      // Добавляем текст
       textAlert.innerText = 'Это правильный ответ!'
+      textAlert.classList.add('qu_alert_text_extra')
 
       main.removeEventListener('click', foo)
-      currentScore++
+      currentScore += index
       scoreSpan[2].innerText = currentScore
       questionPassed++
       finishPrase()
+      index = 1
     } else {
-      
-      // main.classList.remove("qu_answers_extra")
-
-      // let textAlert = main.parentElement.querySelector('.qu_alert_text')
       textAlert.innerText = 'Ответ не верен!'
-      if (event.target.style.backgroundColor != "rgb(255, 102, 102)") {
-        currentScore--
-      }
+      textAlert.classList.add('qu_alert_text_extra')
+      index = 0
       event.target.style.backgroundColor = "#FF6666";
-      scoreSpan[2].innerText = currentScore
     }
   }
 }
 
-
 function finishPrase() {
-  if (questionPassed === 5) {
+  if (questionPassed === questionQuantity) {
     let q = document.querySelector('.wrap_modal')
+    modalSpan.innerText = currentScore
     q.style.opacity = 1
     q.style.visibility = 'visible'
   }
 }
 
+
+
+
+// Кнопка закрыть модальное окно (крестик)
 let closeBtn = document.querySelector('.close')
 closeBtn.addEventListener('click', function () {
   let q = document.querySelector('.wrap_modal')
   q.style.opacity = 0
   q.style.visibility = 'hidden'
 })
+
+
+// Доработать
+// Баллы прибавлялись более корректно
+// Вопросы в разном порядке на странице (и ответы тоже)
 
 

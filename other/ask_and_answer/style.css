@@ -1,38 +1,42 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
 * {
   font-family: 'Roboto Condensed', sans-serif;
+  box-sizing: border-box;
 }
-
 body {
   background: url('white-flecks.png');
+}
+.container {
+  margin: 0 auto 30px auto;
+  max-width: 900px;
+  width: 90%;
 }
 
 .score {
   position: fixed;
   right: 0;
-  /* left: 0; */
-  /* margin: auto; */
   bottom: 0;
   border: 1px dotted #330066;
   padding: 5px;
   background-color: #CCCCFF;
-  /* margin-bottom: -1px; */
-  /* text-align: center; */
-  /* max-width: 170px; */
   font-size: 12px;
+}
 
+.qu {
+  background-color: lavender;
+  padding: 20px;
+  margin-bottom: 20px;
+  font-size: 18px;
 }
 
 .qu_answers {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
 }
 .qu_answers > div {
   border: 1px solid black;
   padding: 5px 10px;
-  flex-basis: 40%;
-  margin: 5px;
-  flex-grow: 1;
   user-select: none;
 }
 .qu_answers_extra > div:hover {
@@ -47,26 +51,29 @@ body {
 
 .qu_alert_text {
   text-align: center;
-  margin: 0;
+  margin: 10px 0 0 0;
+  opacity: 0;
+  cursor: default;
+}
+.qu_alert_text_extra {
+  opacity: 1;
+  transition: 0.5s;
 }
 
-/* hr {
-  margin: 70px 0;
-} */
-
-.qu {
-  background-color: lavender;
-  padding: 20px;
-  margin-bottom: 20px;
-}
-.qu {
-  font-size: 18px;
+@media (max-width: 600px) {
+  .qu_answers {
+    grid-template-columns: 1fr;
+  }
+  .container {
+    width: 100%;
+    margin: 0;
+  }
 }
 
 
 .wrap_modal {
-  background: rgba(0,0,0,0.5); /* цвет фона */
-  position: fixed; /* фиксированное положение */
+  background: rgba(0,0,0,0.5);
+  position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
@@ -76,13 +83,13 @@ body {
   flex-direction: column;
   justify-content: center;
   opacity: 0;
-  transition: 1s;
+  transition: 0.5s;
   visibility: hidden;
 }
 .modal {
   position: relative;
   max-width: 500px;
-  margin: 30px auto; /* для отображения модального окна по центру */
+  margin: 30px auto;
   background-color: #fff;
   border: 1px solid rgba(0, 0, 0, .2);
   border-radius: .3rem;
@@ -90,7 +97,6 @@ body {
   text-align: center;
   padding: 40px 10px;
   font-size: 22px;
-  
 }
 .close {
   width: 15px;
