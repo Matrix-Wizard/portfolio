@@ -94,7 +94,7 @@ function foo(event) {
       finishPrase()
       index = 1
     } else {
-      textAlert.innerText = 'Ответ не верен!'
+      textAlert.innerText = 'Ответ не верен! Попробуйте снова.'
       textAlert.classList.add('qu_alert_text_extra')
       index = 0
       event.target.style.backgroundColor = "#FF6666";
@@ -135,9 +135,13 @@ function soundClick() {
   audio.play()
 }
 
-// Доработать
+// +++++ Доработать
 // Баллы прибавлялись более корректно
 // Вопросы в разном порядке на странице (и ответы тоже)
+// Кнопки ответов выпуклые
+// Звуковой сигнал при правильном ответе и не правильном
+// Звук чуть потише сделать
+
 
 
 
