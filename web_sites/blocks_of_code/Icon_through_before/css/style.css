@@ -1,0 +1,72 @@
+html {
+  box-sizing: border-box;
+}
+*, *:after, *:before {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  padding: 0 15px;
+  margin: 0 auto;
+  border: 1px solid black;
+}
+.reason {
+  display: flex;
+  justify-content: space-between;
+}
+.reason__item {
+  max-width: 480px;
+  position: relative;
+}
+/* .reason__item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url(../images/clock.png);
+  width: 103px;
+  height: 103px;
+} */
+
+/* Как подключать fontawersome https://fontawesome.com/how-to-use/on-the-web/advanced/css-pseudo-elements */
+.reason__item::before {
+  font-family: "Font Awesome 5 Free";
+  content: '\f0ac';
+  font-weight: 900;
+  font-size: 103px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.reason__title {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 36px;
+  line-height: 36px;
+  margin-bottom: 20px;
+  padding-left: 136px;
+}
+.reason__text {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+  margin-bottom: 40px;
+}
+.reason__link {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+h1::before {
+  font-family: "Font Awesome 5 Free";
+  content: '\f0ac';
+}
